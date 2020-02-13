@@ -31,7 +31,7 @@ function indent() {
   esac
 }
 
-PACKAGES="ca-certificates fontconfig libc6 libfreetype6 libjpeg-turbo8 libpng12-0 libssl1.0.0 libstdc++6 libx11-6 libxcb1 libxext6 libxrender1 xfonts-75dpi xfonts-base zlib1g"
+PACKAGES="ca-certificates fontconfig libc6 libfreetype6 libjpeg-turbo8 libpng12-0 libssl1.0.0 libstdc++6 libx11-6 libxcb1 libxext6 libxrender1 xfonts-75dpi xfonts-base zlib1g wkhtmltopdf"
 
 APT_CACHE_DIR="$CACHE_DIR/apt/cache"
 APT_STATE_DIR="$CACHE_DIR/apt/state"
@@ -59,7 +59,7 @@ done
 
 mkdir -p $BUILD_DIR/.apt
 wget http://security.ubuntu.com/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1.1_amd64.deb -P $APT_CACHE_DIR/archives/
-wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.bionic_amd64.deb -P $APT_CACHE_DIR/archives/
+# wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.bionic_amd64.deb -P $APT_CACHE_DIR/archives/
 
 for DEB in $(ls -1 $APT_CACHE_DIR/archives/*.deb); do
   topic "Installing $(basename $DEB)"
